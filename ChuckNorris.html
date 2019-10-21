@@ -20,8 +20,13 @@
     <div class="container">
       <h1 class="title">Chuck Norris Jokes</h1>
       <p>Reload for another joke!</p>
+      
 
       <div class="content" id="chuck-norris">
+      </div>
+      <div></div>
+      <button id="myBtn" onclick="fetchChuckNorrisJSON()">Try it</button>
+
       </div>
     </div>
 
@@ -32,6 +37,7 @@
   
   
   <script>
+    
     function fetchChuckNorrisJSON() {
   
   const url = `https://api.chucknorris.io/jokes/random`;
@@ -46,7 +52,7 @@
       const chuckHtml = `
         <p><strong>${norris.value}</strong></p>
         <img src="${norris.icon_url}" />
-        <p>date : "${norris.created_at}"</p>
+        <p>date : ${norris.created_at}</p>
       `;
       document.querySelector('#chuck-norris').innerHTML = chuckHtml;
     });
